@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock title %}
+{% block homeactive %} active {% endblock homeactive %}
+{% block body %}
+<div style="background-color:#006600;" class="container my-3">
+<div class="jumbotron">
+  <h1 class="display-4" style = "text-align: center;"><b>Welcome to NOCK</b></h1>
+  <img src=static/img/jumbotronimage.jpg width="500" height="250"  color=red class="card-img-top" >
+  <hr class="my-4">
+  <a class="btn btn-primary btn-lg" href="/blog" role="button">Go to blog</a>
+</div>
+</div>
+
+<div class="container"></div>
+
+
+
+
+<div class="card-group">
+   {% for book in allbook %}
+<div class="col">
+  
+    <div class="card">
+      <img src=static/img/bookimage.jpg width = 10% height = 50% color=red class="card-img-top" "width = 70%"alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{book.name}}</h5>
+        <a href ="{{book.file}}"><h4>Click Here For Download</h4></a>
+        <p class="card-text">{{book.email}}</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">{{book.teacher}}</small>
+      </div>
+    
+  </div>
+ 
+</div>
+{% endfor %}
+</div>
+   
+ {% endblock body %}
